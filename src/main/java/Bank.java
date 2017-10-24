@@ -151,17 +151,26 @@ public class Bank extends BankAccount {
 
         BankAccount account2 = new BankAccount("Jony Ive", BankAccountType.STUDENT);
         totalAccounts += 1;
-        System.out.println("Bank account for Johy Ive created\n\n");
+        System.out.println("Bank account for Jony Ive created\n\n");
 
         // Deposit money to both accounts and print new balance
         bank.depositMoney(account1, 1000.0);
         bank.depositMoney(account2, 5000.0);
-
+        System.out.printf("Account balance for John Doe: %.2f", account1.getAccountBalance());
+        System.out.println();
+        System.out.printf("Account balance for Jony Ive: %.2f", account2.getAccountBalance());
+        System.out.println();
         // Withdraw money from Account 2 and print new balance
         bank.withdrawMoney(account2, 200.0);
+        System.out.printf("New account balance for Jony Ive: %.2f", account2.getAccountBalance());
+        System.out.println();
 
         // Transfer money from Account 2 to Account 1 and print new balances
         bank.transferMoney(account2, account1, 350.0);
+        System.out.printf("New account balance for John Doe: %.2f", account1.getAccountBalance());
+        System.out.println();
+        System.out.printf("New account balance for Jony Ive: %.2f", account2.getAccountBalance());
+        System.out.println("\n\n");
 
         // Print number of accounts
         System.out.print("Number of active accounts at " + bank.bankName + " are ");
